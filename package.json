@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "uni-app-fetch": "^0.0.3"
+  }
+}
