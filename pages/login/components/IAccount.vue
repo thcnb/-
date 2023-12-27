@@ -2,15 +2,13 @@
 	<view>
 		<uni-forms ref="seedForm" :model="formData" :rules="rules" label-position="top">
 			<uni-forms-item name="name">
-				<view class="input">
-					<input class="" type="text" v-model="formData.name" placeholder="请输入账号" />
-				</view>
+				<input class="" type="text" v-model="formData.name" placeholder="请输入账号" />
+				<view class="input"></view>
 			</uni-forms-item>
 			<uni-forms-item name="email">
-				<view class="input">
-					<input class="" v-model="formData.email" :password="password" type="text" placeholder="请输入密码" />
-					<uni-icons @click="uIcons" class="uIcons" :type="password==true?'eye-filled':'eye-slash-filled'" size="20"></uni-icons>
-				</view>
+				<input class="" v-model="formData.email" :password="password" type="text" placeholder="请输入密码" />
+				<uni-icons @click="uIcons" class="uIcons" :type="password == true ? 'eye-filled' : 'eye-slash-filled'" size="20"></uni-icons>
+				<view class="input"></view>
 			</uni-forms-item>
 		</uni-forms>
 		<button class="button-hover" @click="submit">登录</button>
@@ -53,8 +51,8 @@ const rules = {
 onReady(() => {
 	seedForm.value.setRules(rules)
 })
-const uIcons = ()=>{
-	password.value=!password.value
+const uIcons = () => {
+	password.value = !password.value
 }
 const submit = async () => {
 	console.log(formData.value)
@@ -68,7 +66,7 @@ const submit = async () => {
 			}).then((res) => {
 				console.log(res)
 				uni.navigateTo({
-					url:'/pages/index/index'
+					url: '/pages/index/index'
 				})
 			})
 		}
@@ -77,23 +75,5 @@ const submit = async () => {
 </script>
 
 <style lang="scss">
-.button-hover {
-	width: 309px;
-	height: 50px;
-	background: #ef4f3f;
-	border-radius: 24.77px;
-	color: #fff;
-}
-.uni-forms-item__label no-label {
-	border-bottom: #000;
-}
-.uIcons {
-	position: absolute;
-	left: 330px;
-	bottom: 3px;
-}
-.input{
-	border-bottom: 1px solid #ccc;
-	margin-bottom: 1px;
-}
+@import '../login.scss';
 </style>

@@ -70,24 +70,5 @@ const submit = async () => {
 </script>
 
 <style lang="scss">
-.button-hover {
-	width: 309px;
-	height: 50px;
-	background: #ef4f3f;
-	border-radius: 24.77px;
-	color: #fff;
-}
-.Captcha {
-	position: absolute;
-	left: 260px;
-	bottom: 10px;
-	border-left: 1px solid #ccc;
-	.Captchas {
-		margin-left: 8px;
-	}
-}
-.input {
-	border-top: 1px solid #ccc;
-	margin-top: 10px;
-}
+@import '../login.scss';
 </style>
