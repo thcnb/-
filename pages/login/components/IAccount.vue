@@ -19,11 +19,13 @@
 import { onReady } from '@dcloudio/uni-app'
 import { loginApi } from './../../../apis/loginss'
 import { ref } from 'vue'
+import {useUsersStore} from '@/store/index'
+const store = useUsersStore()
 const seedForm = ref()
 const resetForm = () => {
 	return {
-		name: '',
-		email: ''
+		name: 'xbsj001',
+		email: '123456'
 	}
 }
 const password = ref(true)
@@ -65,9 +67,8 @@ const submit = async () => {
 				password: formData.value.email
 			}).then((res) => {
 				console.log(res)
-				uni.navigateTo({
-					url: '/pages/index/index'
-				})
+				store.token=res.data
+				console.log(store.token);
 			})
 		}
 	})

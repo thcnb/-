@@ -20,7 +20,7 @@ const uniFetch = createUniFetch<responseData>({
 		},
 		// 响应拦截器
 		response(result) {
-			return result;
+			return result.data;
 		}
 	}
 });
